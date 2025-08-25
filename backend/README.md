@@ -22,6 +22,10 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
 Open interactive docs at `/docs`.
 
+## Web UI
+
+Open the website at `http://127.0.0.1:8000/web/` (root `/` redirects there).
+
 ## Simulate Device
 
 In another terminal (server running):

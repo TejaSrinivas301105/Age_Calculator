@@ -3,6 +3,8 @@ from __future__ import annotations
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
+from fastapi.responses import RedirectResponse
+from starlette.staticfiles import StaticFiles
 
 from .db import Base, engine
 from .routers import device, public
@@ -23,4 +25,8 @@ app.include_router(public.router)
 
 @app.get("/")
 def root():
-	return {"ok": True, "service": "Village Bus Service"}
+	return RedirectResponse(url="/web/")
+
+
+# Mount static UI
+app.mount("/web", StaticFiles(directory="app/static", html=True), name="web")

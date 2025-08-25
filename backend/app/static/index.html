@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Village Bus Service</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Village Bus Service</h1>
+      <p class="subtitle">Find available buses between villages</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Search Buses</h2>
+        <form id="search-form">
+          <div class="form-row">
+            <label for="fromStop">From</label>
+            <input id="fromStop" name="fromStop" placeholder="Village A" required />
+          </div>
+          <div class="form-row">
+            <label for="toStop">To</label>
+            <input id="toStop" name="toStop" placeholder="Village C" required />
+          </div>
+          <button type="submit">Search</button>
+        </form>
+      </section>
+
+      <section class="card" id="results-card" hidden>
+        <h2>Available Buses</h2>
+        <div id="results"></div>
+      </section>
+
+      <section class="card" id="status-card" hidden>
+        <h2>Bus Status</h2>
+        <div id="status"></div>
+      </section>
+    </main>
+
+    <footer>
+      <small>Powered by FastAPI</small>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+  </html>
